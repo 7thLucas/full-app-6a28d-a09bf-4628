@@ -1,0 +1,124 @@
+<style>
+  .sl-steps-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.75rem; }
+  .mode-portrait .sl-steps-grid { grid-template-columns: repeat(2, 1fr); }
+</style>
+<section class="w-full h-full overflow-auto bg-white">
+  <div class="flex flex-col h-full p-12">
+
+    <!-- Header -->
+    <div class="mb-6">
+      <div class="flex items-center gap-2 mb-2">
+        <div class="w-1.5 h-1.5 rounded-full bg-blue-600"></div>
+        <span class="text-xs font-bold tracking-widest text-blue-600 uppercase">The Demo Flow</span>
+      </div>
+      <h2 class="text-3xl font-bold text-slate-900">From chaos to clear next actions in under 5 minutes.</h2>
+    </div>
+
+    <!-- Steps — row 1 -->
+    <div class="sl-steps-grid mb-3">
+
+      <!-- Step 1 -->
+      <div class="border border-slate-200 rounded-xl p-4 flex flex-col gap-2">
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
+            <span class="text-white text-xs font-bold">1</span>
+          </div>
+          <span class="text-xs font-bold text-slate-500 uppercase tracking-wide">Dashboard</span>
+        </div>
+        <p class="text-sm font-semibold text-slate-800">Open the command center</p>
+        <p class="text-xs text-slate-500 leading-relaxed">See overall 78% readiness, 5 at-risk locations, and the AI Situation Brief — all in one view.</p>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="border border-slate-200 rounded-xl p-4 flex flex-col gap-2">
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
+            <span class="text-white text-xs font-bold">2</span>
+          </div>
+          <span class="text-xs font-bold text-slate-500 uppercase tracking-wide">Locations</span>
+        </div>
+        <p class="text-sm font-semibold text-slate-800">Spot the delayed opening</p>
+        <p class="text-xs text-slate-500 leading-relaxed">New York SoHo is flagged at 57% — High risk, 11 blockers, 15 missing evidence items.</p>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="border border-slate-200 rounded-xl p-4 flex flex-col gap-2">
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
+            <span class="text-white text-xs font-bold">3</span>
+          </div>
+          <span class="text-xs font-bold text-slate-500 uppercase tracking-wide">Location Detail</span>
+        </div>
+        <p class="text-sm font-semibold text-slate-800">Drill into the blockers</p>
+        <p class="text-xs text-slate-500 leading-relaxed">Review checklists, evidence issues, and exactly which tasks are unresolved or flagged.</p>
+      </div>
+
+      <!-- Step 4 -->
+      <div class="border border-slate-200 rounded-xl p-4 flex flex-col gap-2">
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
+            <span class="text-white text-xs font-bold">4</span>
+          </div>
+          <span class="text-xs font-bold text-slate-500 uppercase tracking-wide">Evidence</span>
+        </div>
+        <p class="text-sm font-semibold text-slate-800">Review AI-flagged evidence</p>
+        <p class="text-xs text-slate-500 leading-relaxed">3 photos need retakes — Ethan identified lighting and framing issues in each one.</p>
+      </div>
+
+    </div>
+
+    <!-- Steps — row 2 -->
+    <div class="sl-steps-grid flex-1">
+
+      <!-- Step 5 -->
+      <div class="border border-blue-200 bg-blue-50 rounded-xl p-4 flex flex-col gap-2">
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
+            <span class="text-white text-xs font-bold">5</span>
+          </div>
+          <span class="text-xs font-bold text-blue-500 uppercase tracking-wide">Ask Ethan</span>
+        </div>
+        <p class="text-sm font-semibold text-slate-800">"Why is SoHo delayed?"</p>
+        <p class="text-xs text-slate-600 leading-relaxed">Ethan explains: staff training at 49%, 3 flagged evidence items, and one unassigned coach shift.</p>
+      </div>
+
+      <!-- Step 6 -->
+      <div class="border border-blue-200 bg-blue-50 rounded-xl p-4 flex flex-col gap-2">
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
+            <span class="text-white text-xs font-bold">6</span>
+          </div>
+          <span class="text-xs font-bold text-blue-500 uppercase tracking-wide">Reports</span>
+        </div>
+        <p class="text-sm font-semibold text-slate-800">Generate the weekly report</p>
+        <p class="text-xs text-slate-600 leading-relaxed">Ethan produces the full ops summary — readiness trends, audit risk, and evidence gaps in seconds.</p>
+      </div>
+
+      <!-- Step 7 -->
+      <div class="border border-blue-200 bg-blue-50 rounded-xl p-4 flex flex-col gap-2">
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0">
+            <span class="text-white text-xs font-bold">7</span>
+          </div>
+          <span class="text-xs font-bold text-blue-500 uppercase tracking-wide">Action Plan</span>
+        </div>
+        <p class="text-sm font-semibold text-slate-800">Open the AI action plan</p>
+        <p class="text-xs text-slate-600 leading-relaxed">27 prioritized items — Urgent / This Week / Monitor — each with owner, location, and due date.</p>
+      </div>
+
+      <!-- Step 8 -->
+      <div class="border border-slate-900 bg-slate-900 rounded-xl p-4 flex flex-col gap-2">
+        <div class="flex items-center gap-2">
+          <div class="w-6 h-6 rounded-full bg-white flex items-center justify-center flex-shrink-0">
+            <span class="text-slate-900 text-xs font-bold">8</span>
+          </div>
+          <span class="text-xs font-bold text-slate-400 uppercase tracking-wide">Manager Brief</span>
+        </div>
+        <p class="text-sm font-semibold text-white">Send the manager brief</p>
+        <p class="text-xs text-slate-400 leading-relaxed">One click. Ethan drafts the message. Managers know exactly what to fix before Friday.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
