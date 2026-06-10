@@ -1,65 +1,49 @@
 import { cn } from "~/lib/cn";
-import type { LocationStatus, AuditRisk, TaskStatus, EvidenceStatus, BlockerSeverity } from "~/data/mock-data";
-
-type ChipVariant =
-  | LocationStatus
-  | AuditRisk
-  | TaskStatus
-  | EvidenceStatus
-  | BlockerSeverity
-  | "Needs Review"
-  | "New Opening"
-  | "Existing"
-  | string;
 
 const variantMap: Record<string, string> = {
-  // Location status
-  "On Track": "bg-green-100 text-green-700 border-green-200",
-  "At Risk": "bg-amber-100 text-amber-700 border-amber-200",
-  "Delayed": "bg-red-100 text-red-700 border-red-200",
-  "Ready for Review": "bg-blue-100 text-blue-700 border-blue-200",
+  // Studio quality status
+  "Strong": "bg-green-100 text-green-700 border-green-200",
+  "On Track": "bg-teal-100 text-teal-700 border-teal-200",
+  "Watchlist": "bg-amber-100 text-amber-700 border-amber-200",
+  "At Risk": "bg-red-100 text-red-700 border-red-200",
+  "Launch Gate": "bg-purple-100 text-purple-700 border-purple-200",
 
-  // Audit risk
-  "Low": "bg-green-100 text-green-700 border-green-200",
-  "Medium": "bg-amber-100 text-amber-700 border-amber-200",
-  "High": "bg-red-100 text-red-700 border-red-200",
+  // Clearance / AI result
+  "Cleared": "bg-green-100 text-green-700 border-green-200",
+  "Needs Coaching": "bg-amber-100 text-amber-700 border-amber-200",
+  "Not Cleared": "bg-red-100 text-red-700 border-red-200",
+  "Needs Second Roleplay": "bg-orange-100 text-orange-700 border-orange-200",
 
-  // Task status
-  "Not Started": "bg-slate-100 text-slate-500 border-slate-200",
-  "In Progress": "bg-blue-100 text-blue-700 border-blue-200",
-  "Submitted": "bg-blue-100 text-blue-700 border-blue-200",
-  "Approved": "bg-green-100 text-green-700 border-green-200",
-  "Rejected": "bg-red-100 text-red-700 border-red-200",
-  "Overdue": "bg-red-100 text-red-700 border-red-200",
-  "Blocked": "bg-red-200 text-red-800 border-red-300",
-
-  // Evidence status
-  "Not Submitted": "bg-slate-100 text-slate-500 border-slate-200",
+  // Submission status
   "Uploaded": "bg-blue-100 text-blue-700 border-blue-200",
-  "Needs Review": "bg-amber-100 text-amber-700 border-amber-200",
-  "AI Reviewing": "bg-blue-100 text-blue-700 border-blue-200",
-  "Needs Manager Review": "bg-amber-100 text-amber-700 border-amber-200",
-  "Needs Retake": "bg-red-100 text-red-700 border-red-200",
+  "AI Processing": "bg-blue-100 text-blue-700 border-blue-200",
+  "AI Reviewed": "bg-indigo-100 text-indigo-700 border-indigo-200",
+  "Manager Review": "bg-amber-100 text-amber-700 border-amber-200",
+  "Approved": "bg-green-100 text-green-700 border-green-200",
+  "Needs Resubmission": "bg-red-100 text-red-700 border-red-200",
 
-  // Blocker severity
-  "Critical": "bg-red-200 text-red-800 border-red-300",
+  // Trend
+  "Improving": "bg-green-100 text-green-700 border-green-200",
+  "Stable": "bg-slate-100 text-slate-600 border-slate-200",
+  "Declining": "bg-red-100 text-red-700 border-red-200",
+  "New": "bg-blue-100 text-blue-700 border-blue-200",
 
-  // Location type
-  "New Opening": "bg-blue-100 text-blue-700 border-blue-200",
-  "Existing": "bg-slate-100 text-slate-600 border-slate-200",
+  // Step status
+  "Complete": "bg-green-100 text-green-700 border-green-200",
+  "In Progress": "bg-blue-100 text-blue-700 border-blue-200",
+  "Pending": "bg-slate-100 text-slate-500 border-slate-200",
 
-  // AI review
-  "Passed": "bg-green-100 text-green-700 border-green-200",
-  "Flagged": "bg-red-100 text-red-700 border-red-200",
-  "Pending": "bg-amber-100 text-amber-700 border-amber-200",
-  "N/A": "bg-slate-100 text-slate-400 border-slate-200",
+  // Launch blocker
+  "Not Approved": "bg-red-100 text-red-700 border-red-200",
 
-  // Team member status
-  "Behind": "bg-red-100 text-red-700 border-red-200",
+  // Generic
+  "High": "bg-red-100 text-red-700 border-red-200",
+  "Medium": "bg-amber-100 text-amber-700 border-amber-200",
+  "Low": "bg-slate-100 text-slate-500 border-slate-200",
 };
 
 interface StatusChipProps {
-  label: ChipVariant;
+  label: string;
   className?: string;
   size?: "sm" | "xs";
 }
@@ -77,6 +61,66 @@ export function StatusChip({ label, className, size = "xs" }: StatusChipProps) {
       )}
     >
       {label}
+    </span>
+  );
+}
+
+interface TrendChipProps {
+  trend: "Improving" | "Stable" | "Declining" | "New";
+  className?: string;
+}
+
+export function TrendChip({ trend, className }: TrendChipProps) {
+  const colorMap: Record<string, string> = {
+    Improving: "bg-green-100 text-green-700 border-green-200",
+    Stable: "bg-slate-100 text-slate-600 border-slate-200",
+    Declining: "bg-red-100 text-red-700 border-red-200",
+    New: "bg-blue-100 text-blue-700 border-blue-200",
+  };
+  const arrows: Record<string, string> = {
+    Improving: "↑",
+    Stable: "→",
+    Declining: "↓",
+    New: "★",
+  };
+
+  return (
+    <span
+      className={cn(
+        "inline-flex items-center gap-1 rounded-full border px-2 py-0.5 text-xs font-semibold whitespace-nowrap",
+        colorMap[trend],
+        className
+      )}
+    >
+      <span>{arrows[trend]}</span>
+      {trend}
+    </span>
+  );
+}
+
+interface ScoreBadgeProps {
+  score: number;
+  className?: string;
+  size?: "sm" | "md";
+}
+
+export function ScoreBadge({ score, className, size = "sm" }: ScoreBadgeProps) {
+  let colors = "bg-slate-100 text-slate-600";
+  if (score >= 9.0) colors = "bg-green-100 text-green-700";
+  else if (score >= 8.0) colors = "bg-teal-100 text-teal-700";
+  else if (score >= 7.0) colors = "bg-amber-100 text-amber-700";
+  else colors = "bg-red-100 text-red-700";
+
+  return (
+    <span
+      className={cn(
+        "inline-flex items-center rounded-lg font-bold tabular-nums",
+        size === "sm" ? "px-2 py-0.5 text-sm" : "px-3 py-1 text-base",
+        colors,
+        className
+      )}
+    >
+      {score.toFixed(1)}
     </span>
   );
 }

@@ -13,6 +13,7 @@ interface KPICardProps {
   iconColor?: string;
   className?: string;
   index?: number;
+  displayOverride?: string;
 }
 
 function useCountUp(target: number, duration = 800, delay = 0) {
@@ -50,6 +51,7 @@ export function KPICard({
   iconColor = "text-slate-400",
   className,
   index = 0,
+  displayOverride,
 }: KPICardProps) {
   const displayValue = useCountUp(value, 800, index * 80);
   const isPositiveDelta = delta?.startsWith("+");
@@ -70,7 +72,7 @@ export function KPICard({
 
       <div className="flex items-end justify-between gap-2">
         <span className="text-3xl font-bold text-slate-900 tabular-nums leading-none">
-          {displayValue}{suffix}
+          {displayOverride ?? displayValue}{suffix}
         </span>
         {delta && (
           <span

@@ -36,8 +36,8 @@ export type TDefaultConfigurableData = {
 };
 
 export const defaultConfigurablesData: TDefaultConfigurableData = {
-  appName: "OpsPilot AI",
-  appTagline: "AI Ops Platform",
+  appName: "CoachIQ",
+  appTagline: "AI Staff Quality Platform",
   logoUrl: "FILL_LOGO_URL_HERE",
   brandColor: {
     primary: "#2563EB",
@@ -45,17 +45,17 @@ export const defaultConfigurablesData: TDefaultConfigurableData = {
     accent: "#3B82F6",
   },
   companyName: "BloomFit Studios",
-  totalLocations: 18,
-  dashboardTitle: "Operations Command Center",
-  dashboardSubtitle: "AI-powered readiness tracking across 18 BloomFit Studios locations.",
+  totalLocations: 5,
+  dashboardTitle: "Staff Quality Command Center",
+  dashboardSubtitle: "Monitor coach performance, front-desk compliance, and launch readiness across all BloomFit Studios.",
   userProfile: {
     name: "Sarah Mitchell",
-    role: "VP of Operations",
+    role: "Founder & Owner",
     initials: "SM",
   },
   showAISituationBanner: true,
   showAIAssistantTeaser: true,
   showActivityFeed: true,
-  locationsPageTitle: "Locations",
-  locationsPageSubtitle: "Monitor readiness across all BloomFit Studios locations.",
+  locationsPageTitle: "Studios",
+  locationsPageSubtitle: "Studio quality, retention, and readiness across BloomFit Studios.",
 };

@@ -1,208 +1,206 @@
-import { useState } from "react";
+import { useRef } from "react";
 import {
-  MapPin,
-  FileX,
-  AlertTriangle,
-  GraduationCap,
-  CheckCircle,
   Activity,
-  Loader2,
-  Download,
+  Users,
+  FileVideo,
+  MonitorPlay,
+  Rocket,
   Calendar,
   Filter,
+  AlertTriangle,
   Sparkles,
+  Send,
+  TrendingDown,
 } from "lucide-react";
+import { useNavigate } from "react-router";
 import { PageLayout, PageContent, TopHeader } from "~/components/layout/PageLayout";
-import { KPICard } from "~/components/ui/KPICard";
-import { AISituationBanner } from "~/components/dashboard/AISituationBanner";
-import { LocationHealthOverview } from "~/components/dashboard/LocationHealthOverview";
-import { LocationReadinessTable } from "~/components/dashboard/LocationReadinessTable";
-import { AIPriorityQueue } from "~/components/dashboard/AIPriorityQueue";
-import { RiskBlockerIntelligence } from "~/components/dashboard/RiskBlockerIntelligence";
-import { EvidenceTrainingSnapshot } from "~/components/dashboard/EvidenceTrainingSnapshot";
-import { ActivityFeed } from "~/components/dashboard/ActivityFeed";
-import { AIAssistantTeaser } from "~/components/dashboard/AIAssistantTeaser";
 import { ToastProvider, useToast } from "~/components/ui/Toast";
-import { useConfigurables } from "~/modules/configurables";
+import { KPICard } from "~/components/ui/KPICard";
+import { AIOwnerSummary } from "~/components/dashboard/AIOwnerSummary";
+import { StudioQualityOverview } from "~/components/dashboard/StudioQualityOverview";
+import { AIQualityFlags } from "~/components/dashboard/AIQualityFlags";
+import { SubmissionQueue } from "~/components/dashboard/SubmissionQueue";
+import { LaunchReadinessPreview } from "~/components/dashboard/LaunchReadinessPreview";
+import { CoachQualityTrends } from "~/components/dashboard/CoachQualityTrends";
+import { LiveAIReviewPreview } from "~/components/dashboard/LiveAIReviewPreview";
 
 function DashboardContent() {
-  const { config, loading } = useConfigurables();
   const { showToast } = useToast();
-  const [isGenerating, setIsGenerating] = useState(false);
+  const navigate = useNavigate();
+  const flagsSectionRef = useRef<HTMLDivElement>(null);
 
-  const title = !loading ? (config.dashboardTitle ?? "Operations Command Center") : "Operations Command Center";
-  const subtitle = !loading
-    ? (config.dashboardSubtitle ?? "AI-powered readiness tracking across 18 BloomFit Studios locations.")
-    : "AI-powered readiness tracking across 18 BloomFit Studios locations.";
-  const showAIBanner = !loading ? (config.showAISituationBanner !== false) : true;
-  const showActivity = !loading ? (config.showActivityFeed !== false) : true;
-  const showAssistant = !loading ? (config.showAIAssistantTeaser !== false) : true;
-
-  const handleGenerateSummary = async () => {
-    setIsGenerating(true);
-    await new Promise((r) => setTimeout(r, 1800));
-    setIsGenerating(false);
-    showToast("AI summary generated successfully", "success");
+  const handleReviewFlags = () => {
+    showToast("AI quality flags loaded.", "info");
+    setTimeout(() => {
+      flagsSectionRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }, 300);
   };
 
-  const handleExportReport = () => {
-    showToast("Weekly readiness report prepared", "info");
+  const handleRequestSubmissions = () => {
+    showToast("Submission reminders prepared for coaches and front-desk staff.", "success");
   };
 
-  const handleCreateActionPlan = () => {
-    showToast("AI action plan generated from current blockers", "success");
+  const handleGenerateOwnerSummary = () => {
+    showToast("Owner summary generated from latest quality data.", "success");
   };
 
-  const handleViewBreakdown = () => {
-    showToast("AI breakdown loaded", "info");
+  const handleOpenLaunchGate = () => {
+    navigate("/launch-readiness");
+  };
+
+  const handleSendDailySummary = () => {
+    showToast("Daily launch readiness summary prepared for Sarah Mitchell.", "success");
+  };
+
+  const handleCreateCoachingPlan = () => {
+    showToast("Coaching plan generated from current AI quality flags.", "success");
+  };
+
+  const handleAskAI = () => {
+    showToast("CoachIQ AI is ready. Ask me anything about your studios.", "info");
+  };
+
+  const handleRequestResubmission = (name: string) => {
+    showToast(`Resubmission request prepared for ${name}.`, "info");
   };
 
   return (
     <PageLayout>
       <TopHeader
-        title={title}
-        subtitle={subtitle}
-        statusLine="Last synced 12 minutes ago · 5 locations need attention"
+        title="Staff Quality Command Center"
+        subtitle="Monitor coach performance, front-desk compliance, and launch readiness across all BloomFit Studios locations."
+        statusLine="5 studios · 30 coaches · 12 front-desk staff · Member retention is the primary metric"
         actions={
           <>
             <button className="inline-flex items-center gap-1.5 h-9 px-3 text-xs font-medium text-slate-600 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">
               <Calendar className="h-3.5 w-3.5" />
-              This Week
+              Last 30 days
             </button>
             <button className="inline-flex items-center gap-1.5 h-9 px-3 text-xs font-medium text-slate-600 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors">
               <Filter className="h-3.5 w-3.5" />
-              All Regions
+              All Studios
             </button>
             <button
-              onClick={handleGenerateSummary}
-              disabled={isGenerating}
-              className="inline-flex items-center gap-1.5 h-9 px-4 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors disabled:opacity-70"
+              onClick={handleReviewFlags}
+              className="inline-flex items-center gap-1.5 h-9 px-4 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 rounded-lg transition-colors"
             >
-              {isGenerating ? (
-                <Loader2 className="h-3.5 w-3.5 animate-spin" />
-              ) : (
-                <Sparkles className="h-3.5 w-3.5" />
-              )}
-              {isGenerating ? "Generating..." : "Generate AI Summary"}
+              <AlertTriangle className="h-3.5 w-3.5" />
+              Review AI Flags
             </button>
             <button
-              onClick={handleExportReport}
+              onClick={handleRequestSubmissions}
               className="inline-flex items-center gap-1.5 h-9 px-3 text-xs font-medium text-slate-700 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors"
             >
-              <Download className="h-3.5 w-3.5" />
-              Export Report
+              <Send className="h-3.5 w-3.5" />
+              Request Submissions
+            </button>
+            <button
+              onClick={handleGenerateOwnerSummary}
+              className="inline-flex items-center gap-1.5 h-9 px-3 text-xs font-medium text-slate-700 border border-slate-200 rounded-lg hover:bg-slate-50 transition-colors"
+            >
+              <Sparkles className="h-3.5 w-3.5" />
+              Generate Owner Summary
             </button>
           </>
         }
       />
 
       <PageContent>
-        <div className="flex flex-col gap-6">
-          {/* AI Situation Banner */}
-          {showAIBanner && (
-            <AISituationBanner
-              onViewBreakdown={handleViewBreakdown}
-              onCreateActionPlan={handleCreateActionPlan}
-            />
-          )}
-
+        <div className="flex flex-col gap-7">
           {/* KPI Cards */}
-          <div className="grid grid-cols-6 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
             <KPICard
-              label="Overall Readiness"
+              label="Network Quality Score"
               value={78}
-              suffix="%"
-              sub="Across 18 U.S. locations"
-              delta="+6% from last week"
+              suffix=""
+              sub="7.8/10 average across all studios"
+              delta="-0.4 from last month"
               icon={Activity}
-              iconColor="text-blue-400"
+              iconColor="text-amber-500"
               index={0}
+              displayOverride="7.8"
             />
             <KPICard
-              label="Locations At Risk"
-              value={5}
-              sub="Need manager attention"
-              note="2 delayed openings"
-              icon={MapPin}
-              iconColor="text-red-400"
+              label="Member Retention"
+              value={84}
+              suffix="%"
+              sub="Network average"
+              delta="SoHo down 6%"
+              icon={Users}
+              iconColor="text-amber-500"
               index={1}
             />
             <KPICard
-              label="Missing Evidence"
-              value={52}
-              sub="Photos, videos, documents pending"
-              note="15 overdue"
-              icon={FileX}
-              iconColor="text-amber-400"
+              label="Coaches Below Threshold"
+              value={6}
+              sub="Below 8.0 quality score"
+              note="2 declining quickly"
+              icon={TrendingDown}
+              iconColor="text-red-500"
               index={2}
             />
             <KPICard
-              label="Critical Blockers"
-              value={14}
-              sub="Blocking audit readiness"
-              note="3 urgent this week"
-              icon={AlertTriangle}
-              iconColor="text-red-400"
+              label="Submissions Due"
+              value={19}
+              sub="Across all studios"
+              note="8 overdue"
+              icon={FileVideo}
+              iconColor="text-amber-500"
               index={3}
             />
             <KPICard
-              label="Training Completion"
-              value={74}
+              label="Front-Desk Readiness"
+              value={78}
               suffix="%"
-              sub="Average staff readiness"
-              note="Below 80% target"
-              icon={GraduationCap}
-              iconColor="text-amber-400"
+              sub="Network average"
+              note="Cancellation handling weakest"
+              icon={MonitorPlay}
+              iconColor="text-amber-500"
               index={4}
             />
             <KPICard
-              label="Ready for Review"
-              value={6}
-              sub="Awaiting manager approval"
-              note="+2 today"
-              delta="+2 today"
-              icon={CheckCircle}
-              iconColor="text-green-400"
+              label="Launch Gate"
+              value={61}
+              suffix="% ready"
+              sub="Denver blocked by 5 staff"
+              note="Not Approved"
+              icon={Rocket}
+              iconColor="text-purple-500"
               index={5}
             />
           </div>
 
-          {/* Location Health + Priority Queue */}
-          <div className="grid grid-cols-3 gap-4">
-            <div className="col-span-2">
-              <LocationHealthOverview />
-            </div>
-            <div>
-              <AIPriorityQueue />
-            </div>
-          </div>
+          {/* AI Owner Summary */}
+          <AIOwnerSummary
+            onViewFlags={handleReviewFlags}
+            onCreateCoachingPlan={handleCreateCoachingPlan}
+            onOpenLaunchGate={handleOpenLaunchGate}
+            onAskAI={handleAskAI}
+          />
 
-          {/* Location Readiness Table */}
-          <LocationReadinessTable />
+          {/* Studio Quality Overview */}
+          <StudioQualityOverview />
 
-          {/* Risk/Blocker + Evidence/Training */}
-          <div className="grid grid-cols-3 gap-4">
-            <div>
-              <RiskBlockerIntelligence />
-            </div>
-            <div className="col-span-2">
-              <EvidenceTrainingSnapshot />
-            </div>
-          </div>
+          {/* AI Quality Flags */}
+          <AIQualityFlags
+            onRequestResubmission={handleRequestResubmission}
+            flagsSectionRef={flagsSectionRef}
+          />
 
-          {/* Activity Feed + AI Teaser */}
-          <div className="grid grid-cols-3 gap-4">
-            {showActivity && (
-              <div className="col-span-2">
-                <ActivityFeed />
-              </div>
-            )}
-            {showAssistant && (
-              <div className={showActivity ? "" : "col-span-3"}>
-                <AIAssistantTeaser />
-              </div>
-            )}
-          </div>
+          {/* Submission Queue */}
+          <SubmissionQueue onRequestResubmission={handleRequestResubmission} />
+
+          {/* Launch Readiness Preview */}
+          <LaunchReadinessPreview
+            onOpenLaunchGate={handleOpenLaunchGate}
+            onSendSummary={handleSendDailySummary}
+          />
+
+          {/* Coach Quality Trends */}
+          <CoachQualityTrends />
+
+          {/* Live AI Review Preview */}
+          <LiveAIReviewPreview />
         </div>
       </PageContent>
     </PageLayout>

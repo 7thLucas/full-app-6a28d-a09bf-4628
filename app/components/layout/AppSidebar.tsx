@@ -1,37 +1,36 @@
 import { Link, useLocation } from "react-router";
 import {
   LayoutDashboard,
-  MapPin,
-  ClipboardList,
-  FileImage,
-  GraduationCap,
+  Building2,
+  Users,
+  FileVideo,
+  Award,
+  Activity,
+  MonitorPlay,
+  Rocket,
   Bot,
   BarChart3,
   Settings,
-  Zap,
+  Brain,
 } from "lucide-react";
 import { cn } from "~/lib/cn";
-import { useConfigurables } from "~/modules/configurables";
 
 const navItems = [
   { label: "Dashboard", icon: LayoutDashboard, href: "/" },
-  { label: "Locations", icon: MapPin, href: "/locations" },
-  { label: "Checklists", icon: ClipboardList, href: "/checklists" },
-  { label: "Evidence Review", icon: FileImage, href: "/evidence-review" },
-  { label: "Staff Training", icon: GraduationCap, href: "/staff-training" },
-  { label: "AI Assistant", icon: Bot, href: "/ai-assistant" },
+  { label: "Studios", icon: Building2, href: "/studios" },
+  { label: "Staff", icon: Users, href: "/staff" },
+  { label: "Submissions", icon: FileVideo, href: "/submissions" },
+  { label: "Certification", icon: Award, href: "/certification" },
+  { label: "Quality Monitoring", icon: Activity, href: "/quality-monitoring" },
+  { label: "Front Desk", icon: MonitorPlay, href: "/front-desk" },
+  { label: "Launch Readiness", icon: Rocket, href: "/launch-readiness" },
+  { label: "AI Review Center", icon: Bot, href: "/ai-review-center" },
   { label: "Reports", icon: BarChart3, href: "/reports" },
   { label: "Settings", icon: Settings, href: "/settings" },
 ];
 
 export function AppSidebar() {
   const location = useLocation();
-  const { config, loading } = useConfigurables();
-
-  const appName = !loading ? (config.appName ?? "OpsPilot AI") : "OpsPilot AI";
-  const appTagline = !loading ? (config.appTagline ?? "AI Ops Platform") : "AI Ops Platform";
-  const userProfile = !loading ? config.userProfile : undefined;
-  const companyName = !loading ? (config.companyName ?? "BloomFit Studios") : "BloomFit Studios";
 
   return (
     <aside className="fixed left-0 top-0 h-screen w-[240px] bg-white border-r border-slate-200 flex flex-col z-40">
@@ -39,14 +38,14 @@ export function AppSidebar() {
       <div className="px-5 py-5 border-b border-slate-100">
         <div className="flex items-center gap-2.5">
           <div className="h-8 w-8 rounded-lg bg-blue-600 flex items-center justify-center shrink-0">
-            <Zap className="h-4 w-4 text-white" />
+            <Brain className="h-4 w-4 text-white" />
           </div>
           <div className="flex flex-col min-w-0">
             <span className="text-sm font-bold text-slate-900 leading-tight truncate">
-              {appName}
+              CoachIQ
             </span>
-            <span className="text-[10px] font-semibold text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded-full leading-tight mt-0.5 w-fit">
-              {appTagline}
+            <span className="text-[10px] font-semibold text-blue-600 bg-blue-50 px-1.5 py-0.5 rounded-full leading-tight mt-0.5 w-fit whitespace-nowrap">
+              AI Staff Quality Platform
             </span>
           </div>
         </div>
@@ -91,19 +90,17 @@ export function AppSidebar() {
       <div className="px-3 py-4 border-t border-slate-100">
         <div className="flex items-center gap-3 px-2 py-2 rounded-lg hover:bg-slate-50 transition-colors cursor-pointer">
           <div className="h-8 w-8 rounded-full bg-blue-600 flex items-center justify-center shrink-0">
-            <span className="text-xs font-bold text-white">
-              {userProfile?.initials ?? "SM"}
-            </span>
+            <span className="text-xs font-bold text-white">SM</span>
           </div>
           <div className="flex flex-col min-w-0">
             <span className="text-xs font-semibold text-slate-900 truncate leading-tight">
-              {userProfile?.name ?? "Sarah Mitchell"}
+              Sarah Mitchell
             </span>
             <span className="text-[10px] text-slate-400 truncate leading-tight">
-              {userProfile?.role ?? "VP of Operations"}
+              Founder &amp; Owner
             </span>
             <span className="text-[10px] text-slate-400 truncate leading-tight">
-              {companyName}
+              BloomFit Studios
             </span>
           </div>
         </div>

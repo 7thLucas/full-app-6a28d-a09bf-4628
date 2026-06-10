@@ -7,21 +7,21 @@ export default function SettingsPage() {
     <PageLayout>
       <TopHeader
         title="Settings"
-        subtitle="Manage your OpsPilot AI workspace, users, and integrations."
+        subtitle="Configure your CoachIQ workspace, quality thresholds, and notification preferences."
       />
       <PageContent className="flex">
         <PlaceholderPage
           icon={Settings}
           title="Workspace Settings"
-          description="Configure your OpsPilot AI workspace — manage team members, set notification preferences, connect integrations, and customize readiness thresholds for your franchise."
+          description="Configure your CoachIQ workspace for BloomFit Studios — set quality score thresholds, manage team roles and permissions, customize AI review criteria, and connect integrations with your studio management systems."
           badge="Coming Soon"
           badgeColor="bg-slate-100 text-slate-600"
           features={[
-            "Team member management and role permissions",
-            "Notification and alert preferences",
-            "Readiness threshold customization by location type",
-            "Integration with POS, training, and HR systems",
-            "API access and webhook configuration",
+            "Quality score threshold customization per studio type",
+            "Team member management and role-based access control",
+            "Notification and alert preferences for owners and directors",
+            "AI review criteria configuration per class format",
+            "Integration with scheduling, CRM, and HR platforms",
           ]}
         />
       </PageContent>
