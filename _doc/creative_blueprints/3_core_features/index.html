@@ -1,0 +1,98 @@
+<style>
+.mode-landscape .sl-grid { grid-template-columns: repeat(3, 1fr); }
+.mode-portrait .sl-grid { grid-template-columns: repeat(2, 1fr); }
+</style>
+<section class="w-full h-full overflow-auto bg-white">
+  <div class="flex flex-col h-full p-12">
+
+    <!-- Header -->
+    <div class="mb-5">
+      <div class="flex items-center gap-2 mb-2">
+        <div class="w-1.5 h-1.5 rounded-full bg-blue-600"></div>
+        <span class="text-xs font-bold tracking-widest text-blue-600 uppercase">Built for Every Role</span>
+      </div>
+      <h2 class="text-3xl font-bold text-slate-900">The right tools for the people who keep operations running.</h2>
+    </div>
+
+    <!-- Persona chips -->
+    <div class="flex flex-wrap gap-2 mb-5">
+      <span class="px-4 py-1.5 bg-blue-600 text-white text-xs font-bold rounded-full">VP of Operations</span>
+      <span class="px-4 py-1.5 bg-slate-100 text-slate-600 text-xs font-medium rounded-full border border-slate-200">Franchise Owner</span>
+      <span class="px-4 py-1.5 bg-slate-100 text-slate-600 text-xs font-medium rounded-full border border-slate-200">Area Manager</span>
+      <span class="px-4 py-1.5 bg-slate-100 text-slate-600 text-xs font-medium rounded-full border border-slate-200">Store Manager</span>
+      <span class="px-4 py-1.5 bg-slate-100 text-slate-600 text-xs font-medium rounded-full border border-slate-200">Brand Auditor</span>
+    </div>
+
+    <!-- Feature cards grid -->
+    <div class="sl-grid grid gap-3 flex-1 content-start">
+
+      <!-- Operations Dashboard -->
+      <div class="border border-slate-200 rounded-xl p-5">
+        <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center mb-3">
+          <svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+          </svg>
+        </div>
+        <h4 class="text-sm font-semibold text-slate-900 mb-1">Operations Dashboard</h4>
+        <p class="text-xs text-slate-500 leading-relaxed">Real-time KPIs, readiness scores, and risk signals across all 18 locations in one command center view.</p>
+      </div>
+
+      <!-- Location Readiness -->
+      <div class="border border-slate-200 rounded-xl p-5">
+        <div class="w-8 h-8 rounded-lg bg-blue-50 flex items-center justify-center mb-3">
+          <svg class="w-4 h-4 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/>
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/>
+          </svg>
+        </div>
+        <h4 class="text-sm font-semibold text-slate-900 mb-1">Location Readiness Tracking</h4>
+        <p class="text-xs text-slate-500 leading-relaxed">Per-location scores, audit risk levels, open blockers, evidence gaps, and staff training percentages — all in one row.</p>
+      </div>
+
+      <!-- AI Summaries -->
+      <div class="border border-slate-200 rounded-xl p-5">
+        <div class="w-8 h-8 rounded-lg bg-purple-50 flex items-center justify-center mb-3">
+          <svg class="w-4 h-4 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"/>
+          </svg>
+        </div>
+        <h4 class="text-sm font-semibold text-slate-900 mb-1">AI Operational Summaries</h4>
+        <p class="text-xs text-slate-500 leading-relaxed">AI-generated briefings flagging the highest-risk locations, most improved, and exactly what needs review right now.</p>
+      </div>
+
+      <!-- Risk & Blockers -->
+      <div class="border border-slate-200 rounded-xl p-5">
+        <div class="w-8 h-8 rounded-lg bg-red-50 flex items-center justify-center mb-3">
+          <svg class="w-4 h-4 text-red-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+          </svg>
+        </div>
+        <h4 class="text-sm font-semibold text-slate-900 mb-1">Risk & Blocker Intelligence</h4>
+        <p class="text-xs text-slate-500 leading-relaxed">Surfaced risk cards for critical blockers, training gaps, evidence delays, and compliance issues before they escalate.</p>
+      </div>
+
+      <!-- Evidence Review -->
+      <div class="border border-slate-200 rounded-xl p-5">
+        <div class="w-8 h-8 rounded-lg bg-green-50 flex items-center justify-center mb-3">
+          <svg class="w-4 h-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+          </svg>
+        </div>
+        <h4 class="text-sm font-semibold text-slate-900 mb-1">Evidence Review</h4>
+        <p class="text-xs text-slate-500 leading-relaxed">Upload and review photos, videos, and documents for every checklist task before locations are marked audit-ready.</p>
+      </div>
+
+      <!-- Staff Training -->
+      <div class="border border-slate-200 rounded-xl p-5">
+        <div class="w-8 h-8 rounded-lg bg-amber-50 flex items-center justify-center mb-3">
+          <svg class="w-4 h-4 text-amber-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+        </div>
+        <h4 class="text-sm font-semibold text-slate-900 mb-1">Staff Training Tracker</h4>
+        <p class="text-xs text-slate-500 leading-relaxed">Monitor training completion rates, role-level readiness, and team compliance across every franchise location.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
