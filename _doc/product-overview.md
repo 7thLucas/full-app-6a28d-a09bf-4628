@@ -87,8 +87,8 @@ AI Operations Readiness Platform
 ## AI Assistant
 
 **Ethan**
-- Title: AI Operations Assistant
-- Capabilities: answers operational Q&A, generates weekly summaries, creates prioritized action plans, identifies blockers, drafts manager briefs, explains why specific locations are delayed, references consistent data across all pages
+- Title: AI Operations Assistant & Quality Auditor
+- Capabilities: answers operational Q&A, generates weekly summaries, creates prioritized action plans, identifies blockers, drafts manager briefs, explains why specific locations are delayed, references consistent data across all pages; additionally acts as an AI operations auditor — analyzes worker interaction transcripts against service rubrics, scores quality categories with explanation and transcript evidence, identifies missed/partial/passed service steps, generates coaching recommendations with priority and suggested training modules, writes manager summaries and worker feedback messages, recommends follow-up actions, issues pass/coaching/retraining verdicts with confidence scores, and asks clarifying questions when a transcript is too short for confident scoring
 
 ---
 
