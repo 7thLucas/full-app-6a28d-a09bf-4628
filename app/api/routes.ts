@@ -3,6 +3,7 @@ import { readdir } from "node:fs/promises";
 import { pathToFileURL } from "node:url";
 import { Router } from "express";
 import { createLogger } from "~/lib/logger";
+import certificationRoutes from "./certification.routes";
 
 type RouteModule = {
   default?: ReturnType<typeof Router>;
@@ -62,7 +63,6 @@ async function registerModuleRoutes(): Promise<void> {
 
 await registerModuleRoutes();
 
-import certificationRoutes from "./certification.routes";
 router.use("/certification", certificationRoutes);
 
 export default router;
