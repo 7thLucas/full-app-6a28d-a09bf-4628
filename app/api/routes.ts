@@ -62,4 +62,7 @@ async function registerModuleRoutes(): Promise<void> {
 
 await registerModuleRoutes();
 
+import certificationRoutes from "./certification.routes";
+router.use("/certification", certificationRoutes);
+
 export default router;
