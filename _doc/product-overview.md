@@ -197,6 +197,16 @@ AI Operations Readiness Platform
 
 **Settings**: workspaceName, market, readinessTarget, notificationPreferences, reportPreferences, assistantPreferences
 
+**WorkerQualityCheck**: id, workerId, workerName, workerRole, location, interactionType, evidenceType, transcript, rubricId, overallScore, passStatus (Excellent|Pass|Needs Coaching|Retraining Required), confidenceScore, executiveSummary, categoryScores, missedSteps, strengths, weaknesses, transcriptHighlights, coachingRecommendations, managerSummary, workerFeedback, recommendedNextActions, createdAt
+
+**CategoryScore**: category, score, status, explanation, transcriptEvidence[], coachingNote
+
+**QualityCheckStep**: step, status (Passed|Partial|Missed), explanation
+
+**TranscriptHighlight**: quote, type (Good Moment|Missed Opportunity|Service Failure), aiAnnotation
+
+**CoachingRecommendation**: title, priority (Urgent|High|Medium|Low), reason, suggestedTraining
+
 ---
 
 ## Build Roadmap (5-Prompt Plan — Complete)
