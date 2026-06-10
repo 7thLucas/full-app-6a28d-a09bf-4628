@@ -242,4 +242,6 @@ AI Operations Readiness Platform
 
 **Assistant**: AssistantTeaser, ChatMessage, SuggestedPromptChip, QuickActionChip, TypingIndicator
 
+**Worker Quality Check**: WorkerQualityCheckPage, QualityCheckForm (worker selector, role, location, rubric, interaction type, evidence type, transcript input), ExampleTranscriptButtons (Try Poor / Try Average / Try Strong), AIReasoningProgress (multi-step evaluation progress UI), QualityResultPanel, OverallVerdictCard, CategoryScoreTable, MissedStepsTable, TranscriptHighlightList, CoachingRecommendationList, ManagerSummaryCard, WorkerFeedbackCard, NextActionsPanel
+
 **Settings**: SettingsPage, SettingsSection
