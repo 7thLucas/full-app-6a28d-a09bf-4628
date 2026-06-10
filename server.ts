@@ -22,17 +22,20 @@ const hmrClientPort = process.env.HMR_CLIENT_PORT
   : defaultPort;
 
 async function startServer() {
-  // Connect to MongoDB
-  try {
-    await connectMongoDB();
-    console.log("MongoDB connected");
+  // Connect to MongoDB (optional — app runs in mock data mode without it)
+  if (process.env.MONGODB_URI) {
+    try {
+      await connectMongoDB();
+      console.log("MongoDB connected");
 
-    // Run all seeds
-    await runSeeds();
-
-  } catch (error) {
-    console.error("Failed to connect to MongoDB:", error);
-    process.exit(1);
+      // Run all seeds
+      await runSeeds();
+    } catch (error) {
+      console.error("Failed to connect to MongoDB:", error);
+      console.warn("Continuing without MongoDB — running in mock data mode");
+    }
+  } else {
+    console.warn("MongoDB not configured — running in mock data mode");
   }
 
   const app = express();

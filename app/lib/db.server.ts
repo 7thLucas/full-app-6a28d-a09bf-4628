@@ -10,7 +10,8 @@ export async function connectMongoDB(): Promise<void> {
 
   const mongoUri = process.env.MONGODB_URI;
   if (!mongoUri) {
-    throw new Error("MONGODB_URI environment variable is required");
+    console.warn("MongoDB not configured — running in mock data mode");
+    return;
   }
 
   try {
