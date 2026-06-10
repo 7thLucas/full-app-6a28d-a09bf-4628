@@ -1,0 +1,60 @@
+<style>
+.mode-landscape .sl-layout { flex-direction: row; }
+.mode-portrait .sl-layout { flex-direction: column; }
+.mode-landscape .sl-left { width: 52%; }
+.mode-landscape .sl-right { width: 48%; }
+.mode-portrait .sl-left { flex: 1; }
+.mode-portrait .sl-right { height: 42%; }
+</style>
+<section class="w-full h-full overflow-auto bg-white">
+  <div class="sl-layout flex h-full">
+
+    <!-- Left: editorial content column -->
+    <div class="sl-left flex flex-col justify-between p-12">
+
+      <div>
+        <!-- Category badge -->
+        <div class="flex items-center gap-2 mb-6">
+          <div class="w-1.5 h-1.5 rounded-full bg-blue-600"></div>
+          <span class="text-xs font-bold tracking-widest text-blue-600 uppercase">AI Operations Readiness Platform</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="text-5xl font-bold text-slate-900 leading-tight mb-5">
+          Every Location.<br/>Always Ready.
+        </h1>
+
+        <!-- Product promise -->
+        <p class="text-lg text-slate-500 leading-relaxed" style="max-width:22rem">
+          Know which locations are ready, which ones are falling behind, and what needs to be fixed before it becomes a problem.
+        </p>
+      </div>
+
+      <!-- Feature chips -->
+      <div class="flex flex-wrap gap-2">
+        <span class="px-3 py-1 bg-blue-50 text-blue-700 text-xs font-semibold rounded-full border border-blue-100">Readiness Scoring</span>
+        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-full">Risk Intelligence</span>
+        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-full">AI Summaries</span>
+        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-full">Evidence Review</span>
+        <span class="px-3 py-1 bg-slate-100 text-slate-600 text-xs font-medium rounded-full">Staff Training</span>
+      </div>
+
+      <!-- Attribution + product note -->
+      <div>
+        <data-attribution />
+        <p class="text-xs text-slate-400 mt-2">OpsPilot AI · Franchise Operations Command Center</p>
+      </div>
+
+    </div>
+
+    <!-- Right: visual anchor -->
+    <div class="sl-right relative overflow-hidden bg-slate-50">
+      <img
+        src="https://api.qb-deck.quantumbyte.ai/common/image-generation?prompt=premium%20modern%20SaaS%20operations%20dashboard%20interface%20showing%20franchise%20location%20readiness%20cards%20with%20progress%20bars%20and%20status%20chips%20in%20green%20and%20amber%2C%20AI%20insights%20summary%20panel%2C%20clean%20white%20UI%20with%20blue%20accent%20color%2C%20Linear%20and%20Stripe-inspired%20premium%20design%2C%20professional%20command%20center%20aesthetic"
+        alt="OpsPilot AI dashboard"
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+  </div>
+</section>
