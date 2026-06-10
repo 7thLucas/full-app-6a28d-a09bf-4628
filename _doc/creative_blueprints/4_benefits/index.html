@@ -1,0 +1,77 @@
+<style>
+.mode-landscape .sl-metrics { grid-template-columns: repeat(4, 1fr); }
+.mode-portrait .sl-metrics { grid-template-columns: repeat(2, 1fr); }
+.mode-landscape .sl-roi { flex-direction: row; gap: 2.5rem; }
+.mode-portrait .sl-roi { flex-direction: column; gap: 1.25rem; }
+</style>
+<section class="w-full h-full overflow-auto bg-white">
+  <div class="flex flex-col h-full p-12">
+
+    <!-- Header -->
+    <div class="mb-6">
+      <div class="flex items-center gap-2 mb-2">
+        <div class="w-1.5 h-1.5 rounded-full bg-blue-600"></div>
+        <span class="text-xs font-bold tracking-widest text-blue-600 uppercase">Why OpsPilot AI</span>
+      </div>
+      <h2 class="text-3xl font-bold text-slate-900">From reactive chaos to operational confidence.</h2>
+    </div>
+
+    <!-- 4 metric cards -->
+    <div class="sl-metrics grid gap-4 mb-5">
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+        <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">Readiness Visibility</p>
+        <p class="text-2xl font-bold text-slate-900 leading-tight mb-2">18 locations,<br/>one view</p>
+        <p class="text-xs text-slate-500 leading-relaxed">See every location's status, blockers, and training gaps in real time — no manual check-ins required.</p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+        <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">AI Risk Detection</p>
+        <p class="text-2xl font-bold text-slate-900 leading-tight mb-2">Risk flagged<br/>before crisis</p>
+        <p class="text-xs text-slate-500 leading-relaxed">OpsPilot AI surfaces the highest-risk locations, missing evidence, and training failures before audit day.</p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+        <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">Opening Readiness</p>
+        <p class="text-2xl font-bold text-slate-900 leading-tight mb-2">Opening day,<br/>always ready</p>
+        <p class="text-xs text-slate-500 leading-relaxed">Track every checklist, evidence item, and training module so new locations open on schedule and on standard.</p>
+      </div>
+
+      <div class="bg-slate-50 border border-slate-200 rounded-xl p-5">
+        <p class="text-xs font-semibold text-slate-500 uppercase tracking-wide mb-2">Brand Assurance</p>
+        <p class="text-2xl font-bold text-slate-900 leading-tight mb-2">Audit ready<br/>by default</p>
+        <p class="text-xs text-slate-500 leading-relaxed">Give area managers and auditors full compliance visibility across every location before review day arrives.</p>
+      </div>
+
+    </div>
+
+    <!-- ROI summary block -->
+    <div class="bg-blue-600 rounded-2xl p-7 flex-1 flex min-h-0">
+      <div class="sl-roi flex w-full items-center">
+
+        <div class="flex-1">
+          <p class="text-blue-200 text-xs font-bold uppercase tracking-wide mb-2">Operations Impact</p>
+          <h3 class="text-2xl font-bold text-white mb-3">Stop managing readiness.<br/>Start leading operations.</h3>
+          <p class="text-blue-100 text-sm leading-relaxed" style="max-width:32rem">Replace scattered spreadsheets, manual check-ins, and last-minute fire drills with a single AI-powered command center that tells every operations leader exactly what needs their attention — and why — before problems compound.</p>
+        </div>
+
+        <div class="flex flex-col gap-3 flex-shrink-0">
+          <div class="flex items-center gap-3 bg-blue-500 rounded-xl px-5 py-3">
+            <div class="w-2 h-2 rounded-full bg-green-400 flex-shrink-0"></div>
+            <span class="text-white text-sm font-medium">18 locations. One dashboard.</span>
+          </div>
+          <div class="flex items-center gap-3 bg-blue-500 rounded-xl px-5 py-3">
+            <div class="w-2 h-2 rounded-full bg-green-400 flex-shrink-0"></div>
+            <span class="text-white text-sm font-medium">AI flags risk before it becomes a crisis.</span>
+          </div>
+          <div class="flex items-center gap-3 bg-blue-500 rounded-xl px-5 py-3">
+            <div class="w-2 h-2 rounded-full bg-green-400 flex-shrink-0"></div>
+            <span class="text-white text-sm font-medium">Opening day, audit day — always ready.</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
