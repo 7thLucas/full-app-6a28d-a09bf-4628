@@ -8,7 +8,7 @@ The product is not a checklist app. It is a smart operational control room.
 
 ## Build Status
 
-All 5 development prompts are complete. OpsPilot AI is a demo-ready, full-featured AI operations platform.
+All 5 development prompts are complete. OpsPilot AI is a demo-ready, full-featured AI operations platform. **Worker Quality Check** — Ethan as AI operations auditor for transcript-based worker quality scoring and coaching — has been added as a post-launch feature expansion.
 
 ## Core Positioning
 
