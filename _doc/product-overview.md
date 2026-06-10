@@ -1,69 +1,46 @@
-# OpsPilot AI — Product Overview
+# CoachIQ — Product Overview
 
 ## What It Is
 
-OpsPilot AI is an AI-powered operations readiness command center for franchise and multi-location businesses. It gives operations leaders a single place to know whether every location is actually ready — compliant, staffed, trained, and executing the brand standard correctly.
+CoachIQ is an AI-powered staff quality monitoring and readiness platform for boutique fitness franchise operators. It helps franchise owners measure, monitor, and improve coach and front-desk quality through AI-reviewed recordings — preventing member churn caused by inconsistent staff delivery.
 
-The product is not a checklist app. It is a smart operational control room.
-
-## Build Status
-
-All 5 development prompts are complete. OpsPilot AI is a demo-ready, full-featured AI operations platform. **Worker Quality Check** — Ethan as AI operations auditor for transcript-based worker quality scoring and coaching — has been added as a post-launch feature expansion.
+The product is not a scheduling or operations tool. It is a staff quality command center.
 
 ## Core Positioning
 
-> "Know which locations are ready, which ones are falling behind, and what needs to be fixed before it becomes a problem."
+> "Know which coaches are delivering, which ones need coaching, and what to fix before a member walks out the door."
 
 ## Product Category
 
-AI Operations Readiness Platform
+AI Staff Quality Monitoring Platform
 
 ---
 
 ## Target Users
 
-1. **Franchise Owners** — want every branch executing properly without manually chasing managers
-2. **VP of Operations** — command center for all locations, blockers, audit risk, and readiness progress
-3. **Area Managers** — know which branches need attention today
-4. **Store Managers** — complete checklists, upload evidence, resolve issues
-5. **Opening Teams** — prepare new locations before launch day
-6. **Brand Auditors** — verify locations are following brand standards
-7. **Staff Members** — assigned tasks and evidence requirements
+1. **Franchise Owner / Founder** — wants consistent coach and front-desk quality across every studio without manually reviewing every session
+2. **Studio Manager** — monitors their studio's coach quality scores, flags, and submission queue in one place
+3. **Head Coach / Lead Trainer** — reviews AI coaching reports for their team, tracks improvement trends
+4. **Front Desk Lead** — manages front-desk staff quality scores and AI flag alerts
 
 ---
 
 ## Key Capabilities
 
-- **Operations Readiness Dashboard** — real-time readiness scores, KPIs, and risk signals across all locations in one view; AI Situation Brief with live priority queue
-- **Location Readiness Tracking** — per-location readiness score, audit risk, open blockers, missing evidence, staff training %, and last update
-- **AI Operational Summary** — AI-generated summaries flagging highest-risk locations, most improved locations, and what needs immediate review
-- **Risk & Blocker Intelligence** — surfaced risk cards showing the most critical blockers, training gaps, evidence delays, and compliance issues
-- **Checklist Management** — build, assign, and track operational checklists for every location and role
-- **Evidence Review** — upload and review photos, videos, and documents before locations are marked audit-ready; AI-flagged issues with notes
-- **Staff Training Tracking** — monitor training completion by role and location; view certification gaps, overdue items, and readiness vs. the 80% target
-- **AI Assistant (Ethan)** — natural-language Q&A about progress, blockers, risk, reports, and prioritized next actions; generates reports and action plans on demand with suggested prompts and quick action chips
-- **Worker Quality Check (AI Quality Auditor)** — Ethan acts as an AI operations auditor: paste or upload an interaction transcript (text, audio, or video), select the worker, role, location, rubric, and interaction type, and Ethan analyzes the full interaction against the BloomFit Front Desk Standard; scores seven rubric categories (Greeting Quality, Script Compliance, Discovery Questions, Clarity of Explanation, Tone and Professionalism, Objection/Question Handling, Closing and Follow-Up); identifies passed/partial/missed required service steps with exact transcript evidence; generates prioritized coaching recommendations with suggested training modules; writes manager summary and worker feedback messages; recommends follow-up actions; and issues a verdict (Excellent / Pass / Needs Coaching / Retraining Required) with a confidence score; multi-step AI reasoning progress UI surfaces Ethan's evaluation stages without exposing chain-of-thought; demo includes Try Poor / Try Average / Try Strong example transcripts; real transcript input routes to `runWorkerQualityAgent(input)` — the single QuantumByte AI agent integration point
-- **AI Reports Center** — full reports hub: weekly operations summary, audit readiness report, evidence gap report, staff training report, report history, and overview cards with trend data
-- **AI Action Plan** — Ethan-generated prioritized work items grouped by urgency (Urgent / This Week / Monitor), drawn from live blockers, evidence gaps, and training risk; custom plan generator with focus area, timeframe, and priority filters
-- **Audit Readiness Report** — segmented location status (Ready / Needs Review / At Risk / Do Not Schedule) with per-location recommendation, reason, and action button
-- **Evidence Gap Report** — missing, rejected, and AI-flagged evidence broken down by type (Photos / Videos / Documents / Training Proof) with per-item owner and action
-- **Staff Training Report** — full training page with role readiness breakdown, location training table, and Ethan training insight card
-- **Manager Brief** — concise follow-up message generated by Ethan, ready to send to location managers in one click, with copy and share options
-- **Export & Share** — simulated PDF export, CSV download, secure share link, and manager brief generation with polished toast confirmations
-- **Settings** — workspace preferences (company, market, locations, readiness target), notification rules, report scheduling, and AI assistant behavior configuration
-- **Activity Feed** — real-time log of what changed, who approved, what was flagged, and what was submitted
-
-## What Managers Can Instantly See
-
-- Which locations are ready
-- Which locations are falling behind
-- Which locations are at risk
-- Which tasks are overdue
-- Which evidence is missing
-- Which staff training items are incomplete
-- Which blockers could delay opening
-- Which locations are likely to fail an audit
-- What to fix first
+- **Staff Quality Command Center** — real-time coach and front-desk quality scores across all studios with 6 KPI cards, AI Owner Summary, and quality trends
+- **Studio Quality Overview** — per-studio coach score, front-desk score, sessions reviewed, quality flags, and status chip in one table
+- **AI Quality Flags** — surfaced flags per coach/staff with issue type, severity (Critical / Warning / Info), studio, and recommended action
+- **Submission Queue** — pending recordings awaiting AI review with coach name, studio, session type, submitted time, and Review button
+- **Coach Quality Profiles** — individual coach quality scores, session history, rubric breakdowns, trend lines, and coaching recommendations
+- **Front Desk Quality Profiles** — individual front-desk staff quality scores, service step compliance, AI flag history, and coaching notes
+- **Recordings & Reviews** — upload and review session recordings (video, audio, transcript); AI analyzes interactions against rubrics and generates scored reports
+- **AI Quality Reports** — weekly quality summaries, coach performance reports, front-desk compliance reports, flag trend analysis, and studio benchmarks
+- **Benchmarks** — quality score benchmarks by studio, role, session type, and time period with comparative analytics
+- **Alerts** — real-time alert feed for new flags, score drops, missed service steps, and coaching threshold breaches
+- **Launch Readiness Preview** — teaser section showing onboarding readiness for studios preparing to go live with CoachIQ
+- **Coach Quality Trends** — week-over-week quality trend lines per studio and per coach
+- **Live AI Review Preview** — 3-step animated preview stepper: Upload Recording → AI Analysis → Coaching Report
+- **Settings** — studio management, coach roster, rubric configuration, notification preferences, AI review thresholds
 
 ---
 
@@ -72,38 +49,32 @@ AI Operations Readiness Platform
 **BloomFit Studios**
 - Business type: Premium boutique fitness studio franchise
 - Market: United States
-- Locations managed: 18 locations across the United States
-- 5 new locations currently in preparation for opening
-- Brand personality: Premium, clean, modern, operationally strict, service-focused, wellness-oriented
+- Studios managed: 5 studios
+- Staff: 30 coaches, 12 front-desk staff
+- Brand personality: Premium, clean, modern, fitness-forward, service-obsessed, member-first
 
 ## Main Demo User
 
 **Sarah Mitchell**
-- Role: VP of Operations
+- Role: Founder & Owner
 - Company: BloomFit Studios
 - Avatar: Initials "SM" (circular)
-- Responsibilities: operational readiness, opening preparation, checklist completion, training compliance, brand audit readiness, and issue resolution across all BloomFit Studios locations
-
-## AI Assistant
-
-**Ethan**
-- Title: AI Operations Assistant & Quality Auditor
-- Capabilities: answers operational Q&A, generates weekly summaries, creates prioritized action plans, identifies blockers, drafts manager briefs, explains why specific locations are delayed, references consistent data across all pages; additionally acts as an AI operations auditor — analyzes worker interaction transcripts against service rubrics, scores quality categories with explanation and transcript evidence, identifies missed/partial/passed service steps, generates coaching recommendations with priority and suggested training modules, writes manager summaries and worker feedback messages, recommends follow-up actions, issues pass/coaching/retraining verdicts with confidence scores, and asks clarifying questions when a transcript is too short for confident scoring
+- Responsibilities: Overall staff quality across all 5 BloomFit studios — coach performance, front-desk consistency, AI flag review, and studio benchmarks
 
 ---
 
 ## App Name & Branding
 
-- **App name**: OpsPilot AI
-- **Tagline**: AI Ops Platform
-- **Style**: Premium modern SaaS — inspired by Linear, Stripe Dashboard, Vercel, Notion, Attio
-- **Background**: Soft white / very light gray (#F8FAFC)
-- **Primary accent**: Modern blue (#2563EB / blue-600) — used for buttons, AI elements, selected states, progress highlights
-- **Text**: Dark navy or charcoal (slate-900 / slate-800)
+- **App name**: CoachIQ
+- **Tagline**: AI Staff Quality Platform
+- **Style**: Premium fitness SaaS — inspired by Whoop, Mindbody Pro, Trainerize, Linear
+- **Background**: Clean white (#FFFFFF / slate-50)
+- **Primary accent**: Deep indigo/violet (#4F46E5 / indigo-600) — used for sidebar, buttons, AI elements, selected states, score highlights
+- **Text**: Dark slate (slate-900 / slate-800)
 - **Cards**: Rounded corners, soft borders (slate-200), subtle shadows, clean spacing
-- **Typography**: Clean sans-serif, strong hierarchy, large numbers for KPI metrics, smaller muted labels for supporting text
-- **Tone of voice**: Operational, confident, helpful, direct — premium without being corporate
-- **Status colors**: green (positive/ready), amber (warning/at risk), red (critical/delayed), blue (info/AI-generated)
+- **Typography**: Clean sans-serif, strong hierarchy, large numbers for quality score KPIs, smaller muted labels for supporting text
+- **Tone of voice**: Confident, coach-forward, data-driven, improvement-oriented — premium without being clinical
+- **Status colors**: green (high quality / passing), amber (needs coaching / warning), red (critical flag / retraining required), blue (info / AI-generated), indigo (primary brand)
 
 ### Avoid
 - Harsh gradients, neon / cyberpunk colors
@@ -117,131 +88,103 @@ AI Operations Readiness Platform
 
 | Metric | Value | Context |
 |---|---|---|
-| Overall Readiness | 78% | Across 18 U.S. locations |
-| Locations at Risk | 5 | Need manager attention |
-| Missing Evidence | 52 items | 15 overdue |
-| Critical Blockers | 14 | 3 urgent this week |
-| Open Action Items | 27 | 11 urgent; AI-generated from current blockers |
-| Reports Generated | 12 | This month; 3 shared with area managers |
+| Overall Coach Quality Score | 84% | Across 5 BloomFit studios (target: 90%) |
+| Sessions Reviewed This Week | 47 | AI-reviewed recordings |
+| Staff Flagged for Coaching | 8 | Coaches and front-desk staff |
+| Average Front Desk Score | 79% | Across all studios |
+| Pending AI Reviews | 12 | Recordings in queue |
+| Improvement Since Last Month | +6% | Overall quality score trend |
 
-## Demo Locations (8 active in dashboard)
+## Demo Studios (5 studios)
 
-| Location | City, State | Type | Readiness | Status | Audit Risk | Blockers | Missing Evidence | Staff Training |
-|---|---|---|---|---|---|---|---|---|
-| BloomFit Austin Downtown | Austin, TX | New Opening | 82% | At Risk | Medium | 4 | 5 | 76% |
-| BloomFit Miami Brickell | Miami, FL | Existing | 94% | On Track | Low | 1 | 1 | 91% |
-| BloomFit Chicago West Loop | Chicago, IL | New Opening | 61% | Delayed | High | 9 | 12 | 54% |
-| BloomFit Los Angeles Silver Lake | Los Angeles, CA | Existing | 88% | On Track | Low | 2 | 3 | 84% |
-| BloomFit Denver RiNo | Denver, CO | New Opening | 73% | At Risk | Medium | 6 | 8 | 69% |
-| BloomFit Nashville Gulch | Nashville, TN | Existing | 91% | On Track | Low | 1 | 2 | 89% |
-| BloomFit Seattle Capitol Hill | Seattle, WA | Existing | 79% | At Risk | Medium | 5 | 6 | 72% |
-| BloomFit New York SoHo | New York, NY | New Opening | 57% | Delayed | High | 11 | 15 | 49% |
+| Studio | City, State | Coach Score | Front Desk Score | Sessions Reviewed | Flags | Status |
+|---|---|---|---|---|---|---|
+| BloomFit Austin Downtown | Austin, TX | 87% | 82% | 11 | 2 | On Track |
+| BloomFit Miami Brickell | Miami, FL | 92% | 88% | 9 | 0 | Excellent |
+| BloomFit Chicago West Loop | Chicago, IL | 71% | 68% | 8 | 4 | Needs Attention |
+| BloomFit Denver RiNo | Denver, CO | 79% | 74% | 10 | 3 | Watch |
+| BloomFit Seattle Capitol Hill | Seattle, WA | 84% | 80% | 9 | 1 | On Track |
 
-### AI Summary Highlights (Demo)
-- **Highest risk**: BloomFit Chicago West Loop & BloomFit New York SoHo
-- **Most improved**: BloomFit Austin Downtown (+8% this week)
-- **Needs review**: BloomFit New York SoHo
+## AI Quality Flags (6 flags — dashboard)
+
+| Coach / Staff | Studio | Issue | Severity |
+|---|---|---|---|
+| Marcus Webb | Chicago West Loop | Missed warm-up script 3x this week | Critical |
+| Priya Nair | Denver RiNo | Low energy delivery, member feedback declining | Warning |
+| Tyler Brooks | Chicago West Loop | Failed membership pitch on 4 of 5 front-desk interactions | Critical |
+| Jordan Lee | Austin Downtown | Inconsistent class intro pacing | Warning |
+| Alicia Torres | Denver RiNo | Recovery protocol skipped in HIIT session | Warning |
+| Front Desk — Seattle | Seattle Capitol Hill | Greeting script compliance dropped to 61% | Info |
+
+## Demo Staff
+
+**Coaches (30 total across 5 studios — 6 per studio avg)**
+Quality scores range from 62% (needs retraining) to 96% (top performer)
+
+**Front-Desk Staff (12 total across 5 studios)**
+Service step compliance scores range from 59% to 94%
 
 ---
 
-## Reports Data (Demo)
+## 11-Item Sidebar Navigation
 
-| Report | Type | Status | Generated By |
-|---|---|---|---|
-| Weekly Operations Summary | Weekly Summary | Shared | Ethan |
-| Audit Readiness Report | Audit | Draft | Sarah Mitchell |
-| Evidence Gap Report | Evidence | Shared | Ethan |
-| Staff Training Report | Training | Reviewed | Ethan |
-| New Opening Risk Report | Risk | Shared | Ethan |
+1. Dashboard (Staff Quality Command Center)
+2. Coaches
+3. Front Desk
+4. Recordings & Reviews
+5. AI Quality Reports
+6. Studios
+7. Benchmarks
+8. Alerts
+9. Submissions
+10. Settings
+11. Help
 
-### Audit Readiness Segments
-- Ready for Audit: 6 locations (incl. Miami Brickell 94%, Nashville Gulch 91%)
-- Needs Manager Review: 5 locations (incl. Los Angeles Silver Lake, Austin Downtown)
-- At Risk: 5 locations (incl. Seattle Capitol Hill, Denver RiNo)
-- Do Not Schedule: 2 locations (New York SoHo 57%, Chicago West Loop 61%)
+---
 
-### Evidence Gap Summary
-- Missing: 52 items | Awaiting Review: 18 | Needs Retake: 7 | AI-Flagged: 4 | Approved Today: 31
-- Evidence types: Photos 68% complete, Videos 42%, Documents 81%, Training Proof 59%
+## Dashboard Sections
 
-### Staff Training Summary
-- Average training completion: 74% (target: 80%)
-- Below-target locations: 5 | Incomplete staff: 28 | Overdue certifications: 9
-- Role readiness: Front Desk 71%, Coaches 78%, Studio Managers 86%, Cleaning 64%, Asst. Managers 82%
+1. **6 KPI Cards** — Overall Coach Quality Score (84%), Sessions Reviewed (47), Staff Flagged (8), Front Desk Score (79%), Pending Reviews (12), Month-over-Month Improvement (+6%)
+2. **AI Owner Summary** — Sarah-personalized 3-4 sentence narrative about current staff quality state
+3. **Studio Quality Overview** — table of all 5 studios with Coach Score, Front Desk Score, Sessions Reviewed, Flags, Status chip
+4. **AI Quality Flags** — list of 6 active flags with coach/staff name, studio, issue, severity chip
+5. **Submission Queue** — 4-5 pending recordings with coach name, studio, type, submitted time, Review button
+6. **Launch Readiness Preview** — teaser section for studios onboarding to CoachIQ
+7. **Coach Quality Trends** — placeholder chart with week-over-week quality trend lines per studio
+8. **Live AI Review Preview Stepper** — 3-step animated preview: Upload Recording → AI Analysis → Coaching Report
 
 ---
 
 ## Data Model (Mock Objects)
 
-**Location**: id, name, city, state, type, readinessScore, status, auditRisk, openBlockers, completedTasks, totalTasks, missingEvidence, staffTraining, lastUpdate, topBlocker
+**Studio**: id, name, city, state, coachQualityScore, frontDeskScore, sessionsReviewed, flagCount, status, lastUpdate
 
-**Task**: id, locationId, title, category, owner, dueDate, status, priority, evidenceRequired
+**Coach**: id, name, studioId, role, qualityScore, sessionsReviewed, flagCount, trend, lastReviewed
 
-**Evidence**: id, locationId, taskId, type, status, submittedBy, submittedAt, aiNote
+**FrontDeskStaff**: id, name, studioId, complianceScore, flagCount, serviceStepCompliance, lastReviewed
 
-**User**: id, name, role, location, initials
+**Recording**: id, coachId, studioId, sessionType, submittedAt, status (Pending|Reviewing|Complete), aiReportId
 
-**Activity**: id, type, title, timestamp, locationName
+**QualityFlag**: id, staffId, staffName, studioId, issueType, severity (Critical|Warning|Info), description, flaggedAt, status
 
-**Report**: id, title, type, generatedAt, generatedBy, status, summary, actions
+**AIQualityReport**: id, recordingId, coachId, studioId, overallScore, verdict (Excellent|Pass|Needs Coaching|Retraining Required), categoryScores, missedSteps, coachingRecommendations, managerSummary, createdAt
 
-**ActionPlanItem**: id, title, owner, location, reason, dueDate, priority, status, actionLabel
-
-**AuditReadinessItem**: id, locationName, readinessScore, auditRisk, recommendation, reason, actionLabel
-
-**EvidenceGapItem**: id, locationName, evidenceItem, type, status, aiNote, owner, actionLabel
-
-**TrainingReportItem**: id, locationName, trainingCompletion, target, gap, risk, incompleteStaff, owner, actionLabel
-
-**ManagerBrief**: id, title, content, generatedBy, generatedAt
-
-**Settings**: workspaceName, market, readinessTarget, notificationPreferences, reportPreferences, assistantPreferences
-
-**WorkerQualityCheck**: id, workerId, workerName, workerRole, location, interactionType, evidenceType, transcript, rubricId, overallScore, passStatus (Excellent|Pass|Needs Coaching|Retraining Required), confidenceScore, executiveSummary, categoryScores, missedSteps, strengths, weaknesses, transcriptHighlights, coachingRecommendations, managerSummary, workerFeedback, recommendedNextActions, createdAt
-
-**CategoryScore**: category, score, status, explanation, transcriptEvidence[], coachingNote
-
-**QualityCheckStep**: step, status (Passed|Partial|Missed), explanation
-
-**TranscriptHighlight**: quote, type (Good Moment|Missed Opportunity|Service Failure), aiAnnotation
+**CategoryScore**: category, score, status, explanation, transcriptEvidence[]
 
 **CoachingRecommendation**: title, priority (Urgent|High|Medium|Low), reason, suggestedTraining
 
----
+**Benchmark**: id, studioId, role, period, averageScore, topPerformer, bottomPerformer, industryAverage
 
-## Build Roadmap (5-Prompt Plan — Complete)
+**Alert**: id, type, staffId, studioId, message, severity, createdAt, read
 
-| Prompt | Scope | Status |
-|---|---|---|
-| 1 | Full app shell, dashboard, navigation, visual identity, demo data, reusable components | ✅ Done |
-| 2 | Locations page — full detail view per location | ✅ Done |
-| 3 | Checklists + Evidence Review workflows | ✅ Done |
-| 4 | Full AI Assistant chatbot (Ethan) | ✅ Done |
-| 5 | Reports Center, AI Action Plan, Audit Readiness, Evidence Gap, Staff Training Report, Manager Brief, Export & Share, Settings polish, demo-ready interactions throughout | ✅ Done |
+**Settings**: studioRoster, coachRoster, rubricConfig, notificationPreferences, reviewThresholds
 
 ---
 
 ## Tech Stack
 
-- React + TypeScript
-- Tailwind CSS
+- Remix (Vite plugin) + Express (Custom Server)
+- TypeScript
+- Tailwind CSS + shadcn/ui
 - Mock data (no real backend, no real AI API, no real authentication)
 - Desktop-first (optimized for 1440px), responsive for tablet and mobile
-
----
-
-## Reusable Components
-
-**Core Shell**: AppSidebar, TopHeader, KPICard, StatusChip, RiskChip, ProgressBar, PageContainer, EmptyStateCard, LoadingState, ToastNotification, ToggleSwitch
-
-**Locations & Checklists**: LocationReadinessTable, LocationRow, AIInsightCard, RiskBlockerCard, ActivityFeed, ActivityItem, ChecklistItem, EvidenceCard
-
-**Reports & Action Plan**: ReportsPage, ReportOverviewCards, AIWeeklySummaryCard, WeeklySummaryDrawer, AuditReadinessReport, AuditReadinessTable, AIActionPlan, ActionPlanGroup, ActionPlanItem, ActionPlanGenerator, EvidenceGapReport, EvidenceIssueTable, ReportHistory, ReportHistoryItem, ExportSharePanel, ManagerBriefModal
-
-**Training**: StaffTrainingPage, TrainingMetricCards, RoleReadinessBreakdown, TrainingLocationTable
-
-**Assistant**: AssistantTeaser, ChatMessage, SuggestedPromptChip, QuickActionChip, TypingIndicator
-
-**Worker Quality Check**: WorkerQualityCheckPage, QualityCheckForm (worker selector, role, location, rubric, interaction type, evidence type, transcript input), ExampleTranscriptButtons (Try Poor / Try Average / Try Strong), AIReasoningProgress (multi-step evaluation progress UI), QualityResultPanel, OverallVerdictCard, CategoryScoreTable, MissedStepsTable, TranscriptHighlightList, CoachingRecommendationList, ManagerSummaryCard, WorkerFeedbackCard, NextActionsPanel
-
-**Settings**: SettingsPage, SettingsSection
