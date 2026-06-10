@@ -30,17 +30,95 @@ AI-Powered Fitness Staff Quality Platform
 ## Four Core Modules
 
 ### Module 1 — Instructor Certification Readiness
-When a new instructor joins, they must submit a recorded 10–15 minute class segment or role-play video before going live with members. AI scores the recording against 5 criteria and returns a readiness decision. Instructors below the 8.0 threshold are marked **Not Cleared** and cannot be scheduled until they resubmit and pass.
 
-**AI Scoring Criteria (Certification)**
-1. Class Opening — instructor explains and delivers warmup correctly
-2. Cueing Quality — movement instructions are clear, safe, and easy to follow
-3. Energy and Pacing — level and pacing match the class format
-4. Safety Cues — proactive safety corrections and modifications given
-5. Closing — cooldown delivered correctly with next-class or follow-up mention
+New instructors must submit a 10–15 minute recorded class segment, role-play video, audio file, or pasted/uploaded transcript before being cleared to teach live members. CoachIQ AI analyzes the submitted content against the BloomFit Instructor Certification Standard. This is a **real AI processing pipeline** — not mock scoring.
 
-**Outcomes:** Cleared · Not Cleared · Needs Resubmission · Manager Review
-Cleared instructors receive a certification badge on their profile.
+**Submission Input Types (4 methods)**
+1. **Upload Video** — MP4, MOV, WebM · Up to 1 GB · AI extracts audio, generates transcript, optionally analyzes visual teaching behavior if supported
+2. **Upload Audio** — MP3, WAV, M4A · AI generates transcript, detects instructor cues, classifies rubric moments
+3. **Paste Transcript** — Class segment transcript pasted directly · Timestamps recommended but optional
+4. **Upload Transcript File** — TXT, DOCX, or PDF · AI extracts and parses content
+
+**Review Modes**
+- **Real AI Review** — Analyzes actual uploaded or pasted content; never uses hardcoded scoring; if AI pipeline is unavailable shows honest error: "Real CoachIQ AI scoring is not connected yet."
+- **Demo Sample Review** — Uses preloaded static examples (Jenna White, Maya Stone, Samantha Reed); results always labeled "Demo Sample"
+
+**AI Processing Pipeline (13 steps)**
+1. Validating submission
+2. Extracting audio or transcript
+3. Generating transcript
+4. Detecting class moments (opening · warmup · cueing · transition · safety cue · modification · cooldown · closing)
+5. Mapping evidence to rubric
+6. Scoring Class Opening
+7. Scoring Cueing Quality
+8. Scoring Energy and Pacing
+9. Scoring Safety Cues
+10. Scoring Closing
+11. Calculating readiness status
+12. Generating coaching recommendations
+13. Updating instructor profile
+
+**AI Scoring Criteria — BloomFit Instructor Certification Standard**
+Each criterion scored 0–10 using 5 subchecks worth 0–2 points each. Default weighting: 20% per criterion.
+
+1. **Class Opening** — warm welcome or confident start · explains class format or session objective · explains warmup purpose · sets intensity/pacing/focus expectations · gives clear first movement setup
+2. **Cueing Quality** — movement setup is clear · includes body position and alignment · tempo/direction/range of motion explained · transitions cued before movement begins · language specific, concise, and easy to follow
+3. **Energy and Pacing** — energy matches class format · pacing is consistent and appropriate · transitions are smooth · instructor maintains presence through the segment · intensity changes are clear
+4. **Safety Cues** — proactive safety cues before risky movements · offers modifications and regressions · specific alignment and form reminders · mentions what to avoid or how to reduce risk · cues breath, control, posture, or range appropriately
+5. **Closing** — cooldown or downshift is delivered · closing feels intentional and not abrupt · instructor acknowledges effort or thanks members · gives recovery/next-step/post-class guidance · mentions next class, follow-up, or member support
+
+**Readiness Decision Rules**
+
+| Status | Condition | Scheduling |
+|---|---|---|
+| Cleared | Overall ≥ 8.0 AND every criterion ≥ 7.5 | Unlocked |
+| Needs Resubmission | Overall 7.0–7.9 OR any criterion < 7.5 | Blocked |
+| Not Cleared | Overall < 7.0 | Blocked |
+| Insufficient Evidence | Content too short, unclear, or unanalyzable | No Decision |
+
+**Certification Badge** — Issued on Cleared status. Title: "Certified to Teach". Displayed on instructor profile with valid-through date.
+
+**Confidence System** — Every AI result includes a numeric confidence score (0–100%) and label: Very High · High · Medium · Low.
+
+**Analysis Basis Labels** — The app always discloses exactly how the result was derived:
+- "Analysis based on transcript."
+- "Analysis based on AI-generated transcript from audio."
+- "Analysis based on transcript extracted from video audio."
+- "Analysis based on transcript and visual video review."
+- If visual AI unavailable: "Visual movement analysis is not connected yet."
+- If transcription failed: "Transcript could not be generated. Paste transcript manually."
+- If transcript too short: "Insufficient evidence for certification scoring."
+- If no AI connected: "Real CoachIQ AI scoring is not connected yet."
+
+**Outcomes:** Cleared · Needs Resubmission · Not Cleared · Insufficient Evidence · Manager Review
+
+**Certification Page Metrics (5 KPI cards)**
+
+| KPI | Value | Subtitle |
+|---|---|---|
+| Certification Readiness | 63% | 3 of 8 cleared |
+| Awaiting AI Review | 2 | Submitted videos waiting for scoring |
+| Not Cleared | 3 | Cannot be scheduled yet |
+| Average Readiness Score | 7.2 / 10 | Below 8.0 threshold |
+| Certification Threshold | 8.0 / 10 | No criterion below 7.5 |
+
+**Certification Queue (8 instructors)**
+
+| Instructor | Studio | Format | Input Type | AI Status | Score | Cert Status | Scheduling |
+|---|---|---|---|---|---|---|---|
+| Jenna White | Denver Launch | Pilates | Video | AI Reviewed | 5.9 / 10 | Not Cleared | Blocked |
+| Maya Stone | Denver Launch | HIIT | Video | AI Reviewed | 7.4 / 10 | Needs Resubmission | Blocked |
+| Leo Grant | Denver Launch | Strength | Pending | Pending Submission | N/A | Pending | Blocked |
+| Brooke Evans | Denver Launch | Yoga | Video | Awaiting AI Review | Pending | Manager Review | Blocked |
+| Taylor Brooks | Austin | HIIT | Transcript | AI Reviewed | 8.3 / 10 | Cleared | Unlocked |
+| Samantha Reed | Miami | Pilates | Video | AI Reviewed | 8.7 / 10 | Cleared | Unlocked |
+| Nora Blake | SoHo | Yoga | Audio | AI Processing | Analyzing | In Review | Blocked |
+| Miles Carter | West Loop | Recovery | Transcript | AI Reviewed | 8.1 / 10 | Cleared | Unlocked |
+
+**Demo Sample Mode** — Three preloaded demos available for presentation/screen recording (all labeled "Demo Sample"):
+- **Failed Demo**: Jenna White · 5.9 / 10 · Not Cleared — Opening: 5.8, Cueing: 6.1, Energy: 6.4, Safety: 5.6, Closing: 6.0
+- **Resubmission Demo**: Maya Stone · 7.4 / 10 · Needs Resubmission — Opening: 7.8, Cueing: 7.6, Energy: 8.2, Safety: 6.9, Closing: 6.7
+- **Passed Demo**: Samantha Reed · 8.7 / 10 · Cleared — Opening: 8.8, Cueing: 8.6, Energy: 8.5, Safety: 8.7, Closing: 8.9
 
 ---
 
@@ -135,7 +213,9 @@ All staff quality is scored on a **10-point scale**.
 
 ## Status Chip System
 
-**Staff Certification:** Cleared · Not Cleared · Needs Resubmission · Pending Submission · Manager Review
+**Staff Certification:** Cleared · Not Cleared · Needs Resubmission · Insufficient Evidence · Pending Submission · Manager Review
+
+**Scheduling Status:** Unlocked · Blocked · No Decision
 
 **Quality Monitoring:** Strong · On Track · Watchlist · Needs Coaching · Declining · Critical
 
@@ -170,7 +250,7 @@ All staff quality is scored on a **10-point scale**.
 
 ---
 
-## Demo Staff (12 named profiles)
+## Demo Staff (16 named profiles)
 
 ### Coaches
 
@@ -178,14 +258,20 @@ All staff quality is scored on a **10-point scale**.
 |---|---|---|---|---|---|---|---|
 | Olivia Hayes | West Loop | Lead Coach | Pilates | 9.2 / 10 | Stable | Cleared | None |
 | Marcus Lee | West Loop | Coach | HIIT | 8.6 / 10 | Improving | Cleared | None |
+| Miles Carter | West Loop | Coach | Recovery | 8.1 / 10 | New | Cleared | None |
 | Claire Bennett | SoHo | Coach | Yoga | 6.9 / 10 | Declining | Cleared | Score dropped 1.7 pts in 4 weeks |
 | Daniel Carter | SoHo | Coach | Pilates | 6.5 / 10 | Declining | Needs Coaching | Cueing quality below threshold |
+| Nora Blake | SoHo | Coach | Yoga | — | New | In Review | Certification AI processing |
 | Emma Brooks | Austin | Coach | HIIT | 7.8 / 10 | Stable | Cleared | Safety cues inconsistent |
 | Hannah Reed | Austin | Coach | Strength | 8.1 / 10 | Improving | Cleared | None |
+| Taylor Brooks | Austin | Coach | HIIT | 8.3 / 10 | New | Cleared | None |
 | Ava Morgan | Miami | Lead Coach | Pilates | 8.7 / 10 | Stable | Cleared | None |
 | Ryan Foster | Miami | Coach | Recovery | 8.0 / 10 | Stable | Cleared | None |
+| Samantha Reed | Miami | Coach | Pilates | 8.7 / 10 | New | Cleared | None |
 | Jenna White | Denver Launch | New Instructor | Pilates | 5.9 / 10 | New | Not Cleared | Certification readiness failed |
-| Maya Stone | Denver Launch | New Instructor | HIIT | 6.4 / 10 | New | Not Cleared | Energy and pacing below threshold |
+| Maya Stone | Denver Launch | New Instructor | HIIT | 6.4 / 10 | New | Needs Resubmission | Certification score 7.4 — needs resubmission |
+| Leo Grant | Denver Launch | New Instructor | Strength | — | New | Pending Submission | Launch gate blocker |
+| Brooke Evans | Denver Launch | Coach Candidate | Yoga | — | New | Awaiting AI Review | Launch gate blocker |
 
 ### Front-Desk Staff
 
@@ -193,8 +279,6 @@ All staff quality is scored on a **10-point scale**.
 |---|---|---|---|---|---|---|
 | Rachel Kim | SoHo | Front Desk | 6.7 / 10 | Declining | Needs Second Roleplay | Membership options not explained clearly |
 | Noah Parker | Denver Launch | Front Desk | 5.8 / 10 | New | Not Cleared | Launch gate blocker |
-
-**Denver Launch additional blockers:** Leo Grant (Coach — Pending Submission), Brooke Evans (Front Desk — Pending Roleplay)
 
 ---
 
@@ -249,7 +333,7 @@ All staff quality is scored on a **10-point scale**.
 
 - Launch readiness: 61%
 - Total staff: 13 · Submitted: 10 · Passed: 8 · Pending: 3 · Below threshold: 2
-- Blocking staff: Jenna White (Not Cleared) · Maya Stone (Not Cleared) · Noah Parker (Not Cleared) · Leo Grant (Pending Submission) · Brooke Evans (Pending Roleplay)
+- Blocking staff: Jenna White (Not Cleared) · Maya Stone (Needs Resubmission) · Noah Parker (Not Cleared) · Leo Grant (Pending Submission) · Brooke Evans (Awaiting AI Review)
 
 ---
 
@@ -292,33 +376,70 @@ Sample submission: Jenna White · New Instructor · Denver Launch · Certificati
 
 ```json
 {
-  "submissionId": "",
-  "staffName": "",
+  "reviewMode": "real_ai | demo_sample",
+  "inputType": "video | audio | pasted_transcript | uploaded_transcript",
+  "instructorName": "",
   "studioName": "",
-  "role": "",
+  "classFormat": "",
   "submissionType": "",
   "rubricName": "",
   "overallScore": 0,
-  "readinessStatus": "",
-  "threshold": 8.0,
+  "readinessStatus": "Cleared | Needs Resubmission | Not Cleared | Insufficient Evidence",
+  "schedulingStatus": "Unlocked | Blocked | No Decision",
+  "readinessThreshold": 8.0,
+  "minimumCriterionThreshold": 7.5,
   "confidenceScore": 0,
+  "confidenceLabel": "Very High | High | Medium | Low",
+  "analysisBasis": "video_transcript | audio_transcript | pasted_transcript | transcript_plus_visual",
+  "transcriptSummary": "",
+  "detectedMoments": [
+    {
+      "momentType": "opening | warmup | cueing | transition | safety_cue | modification | cooldown | closing",
+      "timestampOrLine": "",
+      "summary": ""
+    }
+  ],
   "criterionScores": [
     {
       "criterionName": "",
       "score": 0,
-      "status": "",
+      "status": "Excellent | Meets Standard | Needs Coaching | Below Standard",
+      "subcheckScores": [
+        {
+          "subcheck": "",
+          "score": 0,
+          "maxScore": 2,
+          "evidence": "",
+          "explanation": ""
+        }
+      ],
       "whatAIDetected": "",
       "explanation": "",
-      "timestampEvidence": "",
+      "timestampEvidence": [],
+      "transcriptEvidence": [],
       "coachingRecommendation": ""
     }
   ],
-  "strengths": "",
-  "improvements": "",
+  "strengths": [],
+  "improvements": [],
   "specificCueToTry": "",
   "managerSummary": "",
-  "staffFeedback": "",
-  "recommendedAction": ""
+  "instructorFeedback": "",
+  "resubmissionRequired": false,
+  "resubmissionInstructions": "",
+  "recommendedCoachingPlan": [
+    {
+      "title": "",
+      "priority": "Urgent | High | Medium | Low",
+      "reason": "",
+      "suggestedDrill": ""
+    }
+  ],
+  "certificationBadge": {
+    "issued": false,
+    "title": "Certified to Teach | Not Issued",
+    "validThrough": null
+  }
 }
 ```
 
@@ -372,7 +493,7 @@ Sidebar bottom — user profile: SM avatar · Sarah Mitchell · Founder & Owner 
 
 **AIReviewStep**: id, stepName, status, result, explanation
 
-**AIQualityReport**: id, submissionId, staffName, studioName, role, submissionType, rubricName, overallScore, readinessStatus, threshold, confidenceScore, criterionScores[], strengths, improvements, specificCueToTry, managerSummary, staffFeedback, recommendedAction
+**CertificationReview**: id, instructorName, studioName, classFormat, submissionType, inputType, reviewMode, analysisBasis, overallScore, readinessStatus, schedulingStatus, confidenceScore, confidenceLabel, criterionScores[], subcheckScores[], detectedMoments[], strengths[], improvements[], specificCueToTry, managerSummary, instructorFeedback, resubmissionRequired, resubmissionInstructions, recommendedCoachingPlan[], certificationBadge, reviewedAt
 
 **CoachTrend**: coachId, coachName, studioName, trend, scores[] (last 8), alertMessage
 
